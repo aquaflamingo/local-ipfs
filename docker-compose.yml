@@ -1,0 +1,29 @@
+version: "3"
+services:
+  ipfs_host:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: './entrypoint_sidekiq.sh'
+    ports:
+      # 4001 – Communication with other nodes
+      - '4001:4001'
+      - '4001:4001/udp'
+      # 8080 – Gateway server
+      - '8080:8080'
+      # 5001 – API server
+      - '5001:5001'
+    environment:
+        # Use swarm.key from secrets
+      - IPFS_SWARM_KEY_FILE=/run/secrets/swarm_key_secret
+        # Force Private Network
+      - LIBP2P_FORCE_PNET=1
+    volumes:
+      - ./tmp/staging:/export
+      - ./tmp/data:/data
+    secrets:
+     - swarm_key_secret
+
+secrets:
+  swarm_key_secret:
+    file: ./swarm.key
