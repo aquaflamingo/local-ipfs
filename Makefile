@@ -1,5 +1,5 @@
-LOCAL=local_ipfs
-PRIVATE=private_ipfs
+LOCAL=local
+PRIVATE=private
 
 build-local:
 	@docker-compose -p "$(LOCAL)" -f local_ipfs/docker-compose.yml build
