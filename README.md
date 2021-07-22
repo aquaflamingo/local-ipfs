@@ -30,3 +30,21 @@ Runs mainnet IPFS but in `--offline` mode
 ```bash
 make start-local
 ```
+
+## Registry
+(optional)
+
+Start a local Docker registry via:
+```bash
+make start-registry
+```
+
+This will run a container called `localhost_registry` running on port 5000 which you can push your built images:
+
+```bash
+make build-local
+docker tag local_ipfs localhost:5000/local_ipfs
+docker push localhost:5000/local_ipfs
+```
+
+You can consume the IPFS containers in a different project
