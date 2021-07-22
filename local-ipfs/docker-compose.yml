@@ -1,0 +1,17 @@
+version: "3"
+services:
+  local_ipfs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      # 4001 – Communication with other nodes
+      - '4001:4001'
+      - '4001:4001/udp'
+      # 8080 – Gateway server
+      - '8080:8080'
+      # 5001 – API server
+      - '5001:5001'
+    volumes:
+      - ./tmp/staging:/export
+      - ./tmp/data:/data

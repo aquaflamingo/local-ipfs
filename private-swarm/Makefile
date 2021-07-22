@@ -1,4 +1,4 @@
-PROJECT=ipfs_swarm
+PROJECT=private_ipfs_swarm
 
 all: build 
 
