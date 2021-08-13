@@ -48,3 +48,6 @@ docker push localhost:5000/local_ipfs
 ```
 
 You can consume the IPFS containers in a different project
+
+## Licence
+MIT
