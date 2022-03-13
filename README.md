@@ -3,7 +3,7 @@ Run private IPFS network in Docker
 
 ## Install Clone the repository
 ```bash
-git clone git@github.com:robertsimoes/ipfs-swarm
+git clone git@github.com:aquaflamingo/ipfs-swarm
 ```
 
 ## Local
@@ -37,7 +37,7 @@ You can consume the IPFS containers in a different project
 Removes mainnet bootstrap nodes and attempts to create network locally 
 
 ### Usage
-Generate a `swarm.key` for your network. e.g. [ipfs_swarm_key_generator](github.com/robertsimoes/ipfs_swarm_key_generator):
+Generate a `swarm.key` for your network. e.g. [ipfs_swarm_key_generator](github.com/aquaflamingo/ipfs_swarm_key_generator):
 
 ```bash
 ./ipfs_swarm_key_generator/bin/swarm_key_gen > private_ipfs/swarm.key
